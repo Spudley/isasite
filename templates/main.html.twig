@@ -1,0 +1,29 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Investment list</h1>
+    <table>
+        <tr><th>Fund name</th><th>Units held</th><th>Total value (£)</th></tr>
+        {% for result in results %}
+            <tr><td>{{ result.fundName }}</td><td>{{ result.fundName == 'cash' ? 'n/a' : result.unitTotal }}</td><td>£{{ (result.totalValue/100)|number_format(2, '.', ',') }}</td></tr>
+        {% endfor %}
+    </table>
+    <p>
+        <a href="/wizard/start">Click here to invest more money!</a>
+    </p>
+</div>
+</body>
+</html>
