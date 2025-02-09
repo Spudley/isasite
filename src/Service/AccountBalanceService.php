@@ -31,4 +31,13 @@ class AccountBalanceService
 
         return $qb->getQuery()->getArrayResult();
     }
+
+    public function getRawData(): array
+    {
+        $qb = $this->entityManager->createQueryBuilder()
+            ->select(['t.id', 't.ourTransactionId', 't.theirTransactionId', 't.fundName', 't.units', 't.pencePerUnit', 't.status'])
+            ->from(Transaction::class, 't');
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }
