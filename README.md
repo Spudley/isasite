@@ -71,3 +71,7 @@ To proceed with the transaction, we need to move it through IN_PROGRESS status a
 
 Since this isn't a real system, the plan is to simply have URLs that can be called manually to do these tasks.
 
+
+### The code
+
+As this is a Symfony app, most of the relevant code files are in the `src` directory.
